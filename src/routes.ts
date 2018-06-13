@@ -13,6 +13,13 @@ export class Routes {
     app.route('/admin')
     .get(this.pagesController.getAdminPage.bind(this.pagesController));
 
+    app.route('/admin/login')
+    .get(this.pagesController.getLoginPage.bind(this.pagesController))
+    .post(this.pagesController.login.bind(this.pagesController));
+
+    app.route('/admin/logout')
+    .get(this.pagesController.logout.bind(this.pagesController))
+
     app.route('/admin/new')
     .get(this.pagesController.getNewPage)
     .post(this.carsController.createCar.bind(this.carsController));
